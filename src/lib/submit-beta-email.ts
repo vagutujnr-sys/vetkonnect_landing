@@ -1,36 +1,27 @@
-import { server$ } from "@tanstack/start";
-import nodemailer from "nodemailer";
-
-export const submitBetaEmail = server$(async (data: { email: string }) => {
+export async function submitBetaEmail(data: { email: string }) {
   try {
-    const { email } = data;
+    const email = data.email.trim();
 
-    // Validate email
     if (!email || !email.includes("@")) {
       return { success: false, error: "Invalid email address" };
     }
 
-    // Create transporter using Gmail SMTP
-    // For production, use environment variables
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASSWORD,
+    const response = await fetch("/api/beta-signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({ email }),
     });
 
-    // Send email to your address
-    await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: "vagutujnr@gmail.com",
-      subject: `New Beta Signup: ${email}`,
-      html: `
-        <h2>New VetKonnect Beta Signup</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Date:</strong> ${new Date().toLocaleString()}</p>
-      `,
-    });
+    const result = await response.json();
+
+    if (!response.ok || !result?.success) {
+      return {
+        success: false,
+        error: result?.error || "Failed to submit email. Please try again later.",
+      };
+    }
 
     return { success: true };
   } catch (error) {
@@ -40,4 +31,4 @@ export const submitBetaEmail = server$(async (data: { email: string }) => {
       error: "Failed to submit email. Please try again later.",
     };
   }
-});
+}

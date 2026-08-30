@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { submitBetaEmail } from "../lib/submit-beta-email";
+
 export const Route = createFileRoute("/beta")({
   component: BetaPage,
   head: () => ({
@@ -29,16 +31,7 @@ function BetaPage() {
     setError("");
 
     try {
-      // Send email to your API endpoint
-      const response = await fetch("/api/beta-signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = await response.json();
+      const result = await submitBetaEmail({ email });
 
       if (result.success) {
         setSuccess(true);

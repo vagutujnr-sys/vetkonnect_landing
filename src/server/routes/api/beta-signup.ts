@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 
+const BETA_SIGNUP_RECIPIENT_EMAIL = "vagutujnr@gmail.com";
+
 export default defineEventHandler(async (event) => {
   if (event.node.req.method !== "POST") {
     return { success: false, error: "Method not allowed" };
@@ -7,29 +9,29 @@ export default defineEventHandler(async (event) => {
 
   try {
     const { email } = await readBody(event);
+    const trimmedEmail = typeof email === "string" ? email.trim() : "";
 
-    // Validate email
-    if (!email || !email.includes("@")) {
+    if (!trimmedEmail || !trimmedEmail.includes("@")) {
       return { success: false, error: "Invalid email address" };
     }
 
-    // Create transporter using Gmail SMTP
+    const gmailUser = process.env.GMAIL_USER || BETA_SIGNUP_RECIPIENT_EMAIL;
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GMAIL_USER,
+        user: gmailUser,
         pass: process.env.GMAIL_PASSWORD,
       },
     });
 
-    // Send email to your address
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: "vagutujnr@gmail.com",
-      subject: `New Beta Signup: ${email}`,
+      from: gmailUser,
+      to: BETA_SIGNUP_RECIPIENT_EMAIL,
+      replyTo: trimmedEmail,
+      subject: `New Beta Signup: ${trimmedEmail}`,
       html: `
         <h2>New VetKonnect Beta Signup</h2>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${trimmedEmail}</p>
         <p><strong>Date:</strong> ${new Date().toLocaleString()}</p>
       `,
     });
