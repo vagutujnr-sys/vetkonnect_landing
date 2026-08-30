@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BetaRouteImport } from './routes/beta'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TerminateRouteImport } from './routes/terminate'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -17,6 +18,11 @@ import { Route as TermsRouteImport } from './routes/terms'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BetaRoute = BetaRouteImport.update({
+  id: '/beta',
+  path: '/beta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -37,12 +43,14 @@ const TermsRoute = TermsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/beta': typeof BetaRoute
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/beta': typeof BetaRoute
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/beta': typeof BetaRoute
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/terminate' | '/terms'
+  fullPaths: '/' | '/beta' | '/privacy' | '/terminate' | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/terminate' | '/terms'
-  id: '__root__' | '/' | '/privacy' | '/terminate' | '/terms'
+  to: '/' | '/beta' | '/privacy' | '/terminate' | '/terms'
+  id: '__root__' | '/' | '/beta' | '/privacy' | '/terminate' | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BetaRoute: typeof BetaRoute
   PrivacyRoute: typeof PrivacyRoute
   TerminateRoute: typeof TerminateRoute
   TermsRoute: typeof TermsRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/beta': {
+      id: '/beta'
+      path: '/beta'
+      fullPath: '/beta'
+      preLoaderRoute: typeof BetaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BetaRoute: BetaRoute,
   PrivacyRoute: PrivacyRoute,
   TerminateRoute: TerminateRoute,
   TermsRoute: TermsRoute,

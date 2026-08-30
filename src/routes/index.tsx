@@ -35,6 +35,9 @@ function Home() {
           <span className="truncate text-lg font-extrabold tracking-tight">VetKonnect</span>
         </Link>
         <nav className="flex items-center gap-4 text-sm text-muted-foreground">
+          <Link to="/beta" className="font-semibold text-emerald-600 hover:text-emerald-700">
+            Join Beta
+          </Link>
           <Link to="/privacy" className="hover:text-foreground">
             Privacy
           </Link>
