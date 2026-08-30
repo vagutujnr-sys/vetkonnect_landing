@@ -174,49 +174,6 @@ function BetaPage() {
               We'll never spam you. Unsubscribe at any time.
             </p>
           </div>
-
-          {/* Benefits Section */}
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-lg border border-slate-200 bg-white p-6">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                <span className="text-lg">🚀</span>
-              </div>
-              <h3 className="font-semibold text-slate-900">Early Access</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Get to new features before everyone else.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-slate-200 bg-white p-6">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                <span className="text-lg">💬</span>
-              </div>
-              <h3 className="font-semibold text-slate-900">Your Voice Matters</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Help shape the app with your feedback and suggestions.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-slate-200 bg-white p-6">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                <span className="text-lg">👥</span>
-              </div>
-              <h3 className="font-semibold text-slate-900">Join a Community</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Connect with other pet lovers and vet enthusiasts.
-              </p>
-            </div>
-
-            <div className="rounded-lg border border-slate-200 bg-white p-6">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                <span className="text-lg">🎁</span>
-              </div>
-              <h3 className="font-semibold text-slate-900">Exclusive Perks</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Beta testers get special benefits and rewards.
-              </p>
-            </div>
-          </div>
         </div>
       </main>
 
