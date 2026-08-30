@@ -1,0 +1,112 @@
+<svg width="700" height="1100" viewBox="0 0 700 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="700" height="1100" fill="#F5F7F4"/>
+  <rect x="55" y="30" width="590" height="1040" rx="74" fill="#FFFFFF" stroke="#D8E1D6" stroke-width="4"/>
+  <rect x="282" y="52" width="136" height="18" rx="9" fill="#D8E1D6"/>
+  <circle cx="250" cy="61" r="8" fill="#D9E0D7"/>
+  <circle cx="450" cy="61" r="8" fill="#D9E0D7"/>
+
+  <text x="58" y="174" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Community</text>
+  <text x="58" y="214" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="24">Learn, share and support animals near you.</text>
+
+  <g>
+    <rect x="58" y="246" width="92" height="44" rx="22" fill="#111827"/>
+    <text x="104" y="277" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">All</text>
+    <rect x="165" y="246" width="128" height="44" rx="22" fill="#EEF3F0"/>
+    <text x="229" y="277" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600">Story</text>
+    <rect x="308" y="246" width="160" height="44" rx="22" fill="#EEF3F0"/>
+    <text x="388" y="277" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600">Education</text>
+    <rect x="482" y="246" width="128" height="44" rx="22" fill="#EEF3F0"/>
+    <text x="546" y="277" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600">Rescue</text>
+  </g>
+
+  <g>
+    <circle cx="97" cy="346" r="30" fill="#E2C9A8"/>
+    <path d="M74 346C74 330 87 318 103 318C120 318 132 331 132 346V359H74V346Z" fill="#5D4037"/>
+    <circle cx="95" cy="340" r="4" fill="#5D4037"/>
+    <circle cx="111" cy="340" r="4" fill="#5D4037"/>
+    <path d="M95 350C99 354 105 356 109 354" stroke="#5D4037" stroke-width="4" stroke-linecap="round"/>
+    <rect x="164" y="324" width="110" height="22" rx="11" fill="#D9E6DD"/>
+    <text x="218" y="340" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Tariro M.</text>
+    <text x="215" y="372" fill="#8B8F95" font-family="Arial, Helvetica, sans-serif" font-size="15">2h ago • Harare</text>
+    <rect x="496" y="328" width="77" height="32" rx="16" fill="#EEF3F0"/>
+    <text x="534" y="350" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Story</text>
+    <text x="628" y="347" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="24">•••</text>
+
+    <text x="92" y="430" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="19">Bruno had a great time at the park today.</text>
+    <text x="92" y="458" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="19">Regular walks keep him healthy and happy.</text>
+
+    <rect x="58" y="490" width="584" height="360" rx="26" fill="#EBD9B5"/>
+    <rect x="58" y="490" width="584" height="360" rx="26" fill="url(#goldenShade)"/>
+    <rect x="58" y="490" width="584" height="360" rx="26" fill="url(#sunGlow)" opacity="0.5"/>
+    <rect x="90" y="520" width="155" height="145" rx="10" fill="#EBE5DD" opacity="0.8"/>
+    <rect x="210" y="520" width="165" height="145" rx="10" fill="#D7E8E0" opacity="0.8"/>
+    <rect x="385" y="520" width="185" height="145" rx="10" fill="#E3ECE7" opacity="0.7"/>
+    <rect x="110" y="650" width="130" height="110" rx="8" fill="#E4D4AF" opacity="0.8"/>
+    <rect x="310" y="640" width="170" height="120" rx="8" fill="#E9D59B" opacity="0.8"/>
+
+    <circle cx="390" cy="700" r="120" fill="#D69A3A"/>
+    <ellipse cx="260" cy="737" rx="162" ry="102" fill="#D89A3A"/>
+    <ellipse cx="494" cy="735" rx="170" ry="110" fill="#D89A3A"/>
+    <ellipse cx="350" cy="710" rx="150" ry="95" fill="#C88630"/>
+    <ellipse cx="465" cy="710" rx="80" ry="58" fill="#D89A3A"/>
+    <ellipse cx="260" cy="790" rx="65" ry="52" fill="#D69A3A"/>
+    <ellipse cx="520" cy="790" rx="70" ry="58" fill="#D69A3A"/>
+    <ellipse cx="440" cy="815" rx="110" ry="80" fill="#D89A3A"/>
+    <ellipse cx="312" cy="815" rx="120" ry="82" fill="#D89A3A"/>
+    <circle cx="330" cy="690" r="20" fill="#F0D7A8"/>
+    <circle cx="470" cy="690" r="18" fill="#F0D7A8"/>
+    <path d="M368 702C394 726 425 726 447 702" stroke="#654229" stroke-width="12" stroke-linecap="round"/>
+    <path d="M378 750C404 771 436 770 460 755" stroke="#654229" stroke-width="12" stroke-linecap="round"/>
+    <path d="M315 755C337 776 374 782 399 766" stroke="#654229" stroke-width="12" stroke-linecap="round"/>
+    <path d="M462 783C500 802 542 798 565 780" stroke="#654229" stroke-width="12" stroke-linecap="round"/>
+    <path d="M520 740L548 726" stroke="#654229" stroke-width="12" stroke-linecap="round"/>
+    <path d="M260 720L220 735" stroke="#654229" stroke-width="12" stroke-linecap="round"/>
+    <path d="M320 804H474" stroke="#D6A145" stroke-width="12" stroke-linecap="round"/>
+    <path d="M355 640C409 606 479 612 535 648" stroke="#D09440" stroke-width="16" stroke-linecap="round"/>
+    <path d="M314 642C274 655 246 682 235 708" stroke="#D09440" stroke-width="16" stroke-linecap="round"/>
+
+    <g>
+      <text x="94" y="900" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="18">❤ 24</text>
+      <text x="174" y="900" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="18">💬 6</text>
+      <text x="248" y="900" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="18">↗</text>
+      <path d="M518 888H574V744H518" stroke="#A5AAB3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M520 748L546 720L571 745" stroke="#A5AAB3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <g>
+    <circle cx="95" cy="1012" r="18" fill="#E2C9A8"/>
+    <path d="M80 1014C83 999 95 989 109 989C124 989 136 1001 136 1014V1025H80V1014Z" fill="#5D4037"/>
+    <rect x="162" y="988" width="110" height="22" rx="11" fill="#D9E6DD"/>
+    <text x="216" y="1004" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Dr Munzeiwa</text>
+    <text x="217" y="1032" fill="#8B8F95" font-family="Arial, Helvetica, sans-serif" font-size="15">5h ago • Animal Farm</text>
+    <rect x="486" y="992" width="110" height="30" rx="15" fill="#EEF3F0"/>
+    <text x="541" y="1013" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Education</text>
+  </g>
+
+  <rect x="58" y="934" width="584" height="86" rx="26" fill="#F1F6F1"/>
+  <rect x="88" y="961" width="34" height="34" rx="8" fill="#0AAE6F" opacity="0.18"/>
+  <rect x="176" y="961" width="34" height="34" rx="8" fill="#0AAE6F" opacity="0.14"/>
+  <rect x="264" y="961" width="34" height="34" rx="8" fill="#0AAE6F" opacity="0.14"/>
+  <rect x="352" y="961" width="34" height="34" rx="8" fill="#0AAE6F" opacity="0.14"/>
+  <rect x="440" y="961" width="34" height="34" rx="8" fill="#0AAE6F" opacity="0.14"/>
+  <rect x="528" y="961" width="34" height="34" rx="8" fill="#0AAE6F" opacity="0.14"/>
+  <text x="105" y="982" fill="#0AAE6F" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">⌂</text>
+  <text x="192" y="982" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">◌</text>
+  <text x="280" y="982" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">✦</text>
+  <text x="368" y="982" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">◎</text>
+  <text x="456" y="982" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">◍</text>
+  <text x="544" y="982" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">◉</text>
+
+  <defs>
+    <linearGradient id="goldenShade" x1="58" y1="490" x2="642" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBDFA6"/>
+      <stop offset="0.5" stop-color="#E7BD70"/>
+      <stop offset="1" stop-color="#D7A04D"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(430 520) rotate(90) scale(240 240)">
+      <stop stop-color="#FFF3D8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFF3D8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
