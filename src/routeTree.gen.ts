@@ -14,6 +14,7 @@ import { Route as BetaRouteImport } from './routes/beta'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TerminateRouteImport } from './routes/terminate'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ApiBetaSignupRouteImport } from './routes/api/beta-signup'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBetaSignupRoute = ApiBetaSignupRouteImport.update({
+  id: '/api/beta-signup',
+  path: '/api/beta-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
+  '/api/beta-signup': typeof ApiBetaSignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
+  '/api/beta-signup': typeof ApiBetaSignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,22 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
+  '/api/beta-signup': typeof ApiBetaSignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/beta' | '/privacy' | '/terminate' | '/terms'
+  fullPaths:
+    '/' | '/beta' | '/privacy' | '/terminate' | '/terms' | '/api/beta-signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/beta' | '/privacy' | '/terminate' | '/terms'
-  id: '__root__' | '/' | '/beta' | '/privacy' | '/terminate' | '/terms'
+  to: '/' | '/beta' | '/privacy' | '/terminate' | '/terms' | '/api/beta-signup'
+  id:
+    | '__root__'
+    | '/'
+    | '/beta'
+    | '/privacy'
+    | '/terminate'
+    | '/terms'
+    | '/api/beta-signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +94,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   TerminateRoute: typeof TerminateRoute
   TermsRoute: typeof TermsRoute
+  ApiBetaSignupRoute: typeof ApiBetaSignupRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +134,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/beta-signup': {
+      id: '/api/beta-signup'
+      path: '/api/beta-signup'
+      fullPath: '/api/beta-signup'
+      preLoaderRoute: typeof ApiBetaSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +150,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   TerminateRoute: TerminateRoute,
   TermsRoute: TermsRoute,
+  ApiBetaSignupRoute: ApiBetaSignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

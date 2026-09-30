@@ -27,22 +27,27 @@ function Terminate() {
     >
       <p>
         <strong>In the app.</strong> Open VetKonnect, go to Profile → Settings → Delete
-        account, and confirm. Your account is removed immediately.
+        account, and follow the confirmation steps.
       </p>
       <p>
-        <strong>By email.</strong> Send a request from your registered email address to{" "}
-        <a href="mailto:support@vetkonnect.org" className="font-semibold text-primary">
-          support@vetkonnect.org
-        </a>{" "}
-        with the subject "Delete my account".
+        <strong>By email.</strong> Send your request from the email address registered to
+        your account. Use the button below to open a prefilled email request.
       </p>
       <p>
         <strong>What is deleted.</strong> Your profile, pet profiles, posts, comments and
-        messages. Requests are processed within 30 days.
+        messages. Email requests are processed within 30 days.
       </p>
       <p>
         <strong>What may be kept.</strong> Limited records we are legally required to retain,
         stored securely and never used for marketing.
+      </p>
+      <p>
+        <a
+          href="mailto:support@vetkonnect.org?subject=Delete%20my%20VetKonnect%20account&body=Please%20delete%20my%20VetKonnect%20account%20and%20associated%20data.%0A%0ARegistered%20email:%20"
+          className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
+        >
+          Request account deletion
+        </a>
       </p>
     </LegalPage>
   );

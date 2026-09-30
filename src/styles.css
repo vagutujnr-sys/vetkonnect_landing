@@ -153,6 +153,41 @@
   box-shadow: var(--shadow-soft);
 }
 
+@utility phone-frame-silver {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #aeb8c2 12%,
+    #f8fafc 24%,
+    #7e8994 38%,
+    #eef2f5 52%,
+    #a5afb9 68%,
+    #f8fafc 82%,
+    #858f9a 100%
+  );
+}
+
+@keyframes phone-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@utility animate-phone-float {
+  animation: phone-float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-phone-float {
+    animation: none;
+  }
+}
+
 @utility btn-store {
   display: inline-flex;
   align-items: center;

@@ -1,5 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { StoreButtons } from "@/components/StoreButtons";
+import { createFileRoute } from "@tanstack/react-router";
+import { InstallActions } from "@/components/InstallActions";
+import { SiteLayout } from "@/components/SiteLayout";
+import { UserNetworkBackground } from "@/components/UserNetworkBackground";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,30 +30,9 @@ const highlights = [
 
 function Home() {
   return (
-    <div className="flex min-h-screen flex-col lg:h-screen lg:min-h-0 lg:overflow-hidden">
-      <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 py-4 sm:flex sm:justify-between lg:px-12">
-        <Link to="/" className="flex min-w-0 items-center gap-3">
-          <img src="/logo.png" alt="VetKonnect logo" className="h-10 w-10 shrink-0 object-contain" />
-          <span className="truncate text-lg font-extrabold tracking-tight">VetKonnect</span>
-        </Link>
-        <nav className="flex items-center gap-4 text-sm text-muted-foreground">
-          <Link to="/beta" className="font-semibold text-emerald-600 hover:text-emerald-700">
-            Join Beta
-          </Link>
-          <Link to="/privacy" className="hover:text-foreground">
-            Privacy
-          </Link>
-          <Link to="/terms" className="hover:text-foreground">
-            Terms
-          </Link>
-          <Link to="/terminate" className="hover:text-foreground">
-            Terminate
-          </Link>
-        </nav>
-      </header>
-
+    <SiteLayout className="lg:h-screen lg:min-h-0 lg:overflow-hidden">
       <main className="flex flex-1 items-center px-6 pb-10 lg:overflow-hidden lg:px-12">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <section>
             <span className="inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
               For pet lovers
@@ -63,8 +44,8 @@ function Home() {
               </span>
             </h1>
             <p className="mt-4 max-w-lg text-base text-muted-foreground">
-              VetKonnect brings vets, pet owners and animal lovers together — advice,
-              community and care for the animals you love.
+              VetKonnect brings vets, pet owners and animal lovers together — advice, community and
+              care for the animals you love.
             </p>
             <ul className="mt-5 space-y-2 text-sm">
               {highlights.map((item) => (
@@ -77,25 +58,24 @@ function Home() {
               ))}
             </ul>
             <div className="mt-7">
-              <StoreButtons />
+              <InstallActions />
             </div>
           </section>
 
-          <section className="flex justify-center">
-            <div className="rounded-[2.2rem] border-[6px] border-[#101828] bg-[#0b1220] p-1.5 shadow-[0_25px_60px_rgba(15,23,42,0.18)]">
-              <img
-                src="/community.png"
-                alt="VetKonnect community feed in the mobile app"
-                className="h-auto w-56 rounded-[1.7rem] object-cover sm:w-64 lg:max-h-[65vh] lg:w-auto"
-              />
+          <section className="relative isolate flex justify-center py-8 lg:py-0">
+            <UserNetworkBackground />
+            <div className="animate-phone-float phone-frame-silver relative z-10 rounded-[2.2rem] p-[3px] shadow-[0_25px_60px_rgba(15,23,42,0.2)]">
+              <div className="rounded-[2rem] bg-[#111820] p-1">
+                <img
+                  src="/community.png"
+                  alt="VetKonnect community feed in the mobile app"
+                  className="h-auto w-56 rounded-[1.7rem] object-cover sm:w-64 lg:max-h-[65vh] lg:w-auto"
+                />
+              </div>
             </div>
           </section>
         </div>
       </main>
-
-      <footer className="px-6 pb-5 text-xs text-muted-foreground lg:px-12">
-        © {new Date().getFullYear()} VetKonnect. Made for pets and the people who love them.
-      </footer>
-    </div>
+    </SiteLayout>
   );
 }

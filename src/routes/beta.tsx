@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
+import { SiteLayout } from "@/components/SiteLayout";
 import { submitBetaEmail } from "../lib/submit-beta-email";
 
 export const Route = createFileRoute("/beta")({
@@ -29,6 +30,7 @@ function BetaPage() {
     e.preventDefault();
     setLoading(true);
     setError("");
+    setSuccess(false);
 
     try {
       const result = await submitBetaEmail({ email });
@@ -49,31 +51,8 @@ function BetaPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col lg:h-screen lg:min-h-0 lg:overflow-hidden">
-      {/* Header - Consistent with homepage */}
-      <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-slate-200 px-6 py-4 sm:flex sm:justify-between lg:px-12">
-        <a href="/" className="flex min-w-0 items-center gap-3">
-          <img src="/logo.png" alt="VetKonnect logo" className="h-10 w-10 shrink-0 object-contain" />
-          <span className="truncate text-lg font-extrabold tracking-tight text-foreground">VetKonnect</span>
-        </a>
-        <nav className="flex items-center gap-4 text-sm text-muted-foreground">
-          <a href="/beta" className="font-semibold text-emerald-600 hover:text-emerald-700">
-            Join Beta
-          </a>
-          <a href="/privacy" className="hover:text-foreground">
-            Privacy
-          </a>
-          <a href="/terms" className="hover:text-foreground">
-            Terms
-          </a>
-          <a href="/terminate" className="hover:text-foreground">
-            Terminate
-          </a>
-        </nav>
-      </header>
-
-      {/* Main Content - 2 Column Layout */}
-      <main className="flex flex-1 items-center px-6 pb-10 lg:overflow-hidden lg:px-12">
+    <SiteLayout>
+      <main className="flex flex-1 items-center px-6 py-10 lg:px-12">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-2">
           {/* Left Column - Info */}
           <section>
@@ -150,11 +129,6 @@ function BetaPage() {
           </section>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-200 px-6 py-4 text-center text-xs text-muted-foreground lg:px-12">
-        © {new Date().getFullYear()} VetKonnect. Made for pets and the people who love them.
-      </footer>
-    </div>
+    </SiteLayout>
   );
 }
