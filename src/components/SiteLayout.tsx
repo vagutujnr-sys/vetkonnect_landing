@@ -48,6 +48,13 @@ export function SiteLayout({
           >
             Join Beta
           </Link>
+          <Link
+            to="/practice-pos"
+            onClick={() => setMobileMenuOpen(false)}
+            className="rounded-md px-2 py-2 font-semibold text-foreground hover:bg-muted sm:px-0 sm:py-1"
+          >
+            Practice P.O.S
+          </Link>
           <details className="group relative">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-1 rounded-md px-2 py-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:py-1">
               Store Presence

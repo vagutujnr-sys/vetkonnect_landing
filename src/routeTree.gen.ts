@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BetaRouteImport } from './routes/beta'
+import { Route as PracticePosRouteImport } from './routes/practice-pos'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TerminateRouteImport } from './routes/terminate'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const BetaRoute = BetaRouteImport.update({
   id: '/beta',
   path: '/beta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticePosRoute = PracticePosRouteImport.update({
+  id: '/practice-pos',
+  path: '/practice-pos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -50,6 +56,7 @@ const ApiBetaSignupRoute = ApiBetaSignupRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/beta': typeof BetaRoute
+  '/practice-pos': typeof PracticePosRoute
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/beta': typeof BetaRoute
+  '/practice-pos': typeof PracticePosRoute
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/beta': typeof BetaRoute
+  '/practice-pos': typeof PracticePosRoute
   '/privacy': typeof PrivacyRoute
   '/terminate': typeof TerminateRoute
   '/terms': typeof TermsRoute
@@ -75,13 +84,27 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/beta' | '/privacy' | '/terminate' | '/terms' | '/api/beta-signup'
+    | '/'
+    | '/beta'
+    | '/practice-pos'
+    | '/privacy'
+    | '/terminate'
+    | '/terms'
+    | '/api/beta-signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/beta' | '/privacy' | '/terminate' | '/terms' | '/api/beta-signup'
+  to:
+    | '/'
+    | '/beta'
+    | '/practice-pos'
+    | '/privacy'
+    | '/terminate'
+    | '/terms'
+    | '/api/beta-signup'
   id:
     | '__root__'
     | '/'
     | '/beta'
+    | '/practice-pos'
     | '/privacy'
     | '/terminate'
     | '/terms'
@@ -91,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BetaRoute: typeof BetaRoute
+  PracticePosRoute: typeof PracticePosRoute
   PrivacyRoute: typeof PrivacyRoute
   TerminateRoute: typeof TerminateRoute
   TermsRoute: typeof TermsRoute
@@ -111,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/beta'
       fullPath: '/beta'
       preLoaderRoute: typeof BetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practice-pos': {
+      id: '/practice-pos'
+      path: '/practice-pos'
+      fullPath: '/practice-pos'
+      preLoaderRoute: typeof PracticePosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -147,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BetaRoute: BetaRoute,
+  PracticePosRoute: PracticePosRoute,
   PrivacyRoute: PrivacyRoute,
   TerminateRoute: TerminateRoute,
   TermsRoute: TermsRoute,
